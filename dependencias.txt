@@ -1,0 +1,57 @@
+-------------------------------------------------------------------------:
+-----CONFIGURAR O PROJETO COM A VERSÃO DO JAVA E MAVEN ----:
+-------------------------------------------------------------------------:
+-----ALTERAR O NOME DO BANCO DE DADOS E DEFINIR A PORTA DO SERVIDOR NO ARQUIVO application.yml ----:
+-------------------------------------------------------------------------:
+-----AJUSTAR OS PACOTES DAS CLASSES EXEPTION----:
+-------------------------------------------------------------------------:
+-----DESCOMENTAR O CÓDIGO DA CLASSE RestExceptionHandler, AJUSTAR O PACOTE E OS IMPORTS----:
+-------------------------------------------------------------------------:
+-----ATIVA EM SETTINGS-->> Enable annotation processing:
+-------------------------------------------------------------------------:
+-----Adicionar as denpendencias as seguir no pom.xml------
+-------------------------------------------------------------------------:
+
+<properties>
+<org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
+</properties>
+
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+
+<dependency>
+<groupId>org.mapstruct</groupId>
+<artifactId>mapstruct</artifactId>
+<version>${org.mapstruct.version}</version>
+</dependency>
+
+<dependency>
+<groupId>org.projectlombok</groupId>
+<artifactId>lombok-mapstruct-binding</artifactId>
+<version>0.2.0</version>
+</dependency>
+
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<configuration>
+<source>11</source> <!-- depending on your project -->
+<target>11</target> <!-- depending on your project -->
+<annotationProcessorPaths>
+<path>
+<groupId>org.projectlombok</groupId>
+<artifactId>lombok</artifactId>
+<version>${lombok.version}</version>
+</path>
+<path>
+<groupId>org.mapstruct</groupId>
+<artifactId>mapstruct-processor</artifactId>
+<version>${org.mapstruct.version}</version>
+</path>
+<!-- other annotation processors -->
+</annotationProcessorPaths>
+</configuration>
+</plugin>
+
